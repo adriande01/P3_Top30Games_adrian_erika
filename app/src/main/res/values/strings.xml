@@ -1,0 +1,183 @@
+<resources>
+    <string name="app_name">P3_Top30Games_adrian_erika</string>
+
+    <!-- Game #1 -->
+    <string name="game1_position">#1</string>
+    <string name="game1_title">Minecraft</string>
+    <string name="game1_year">2011</string>
+    <string name="game1_description">Un mundo infinito de bloques donde tu creatividad no tiene límites. Construye, explora y sobrevive en un universo generado proceduralmente lleno de posibilidades.</string>
+
+    <!-- Game #2 -->
+    <string name="game2_position">#2</string>
+    <string name="game2_title">Portal 2</string>
+    <string name="game2_year">2011</string>
+    <string name="game2_description">Resuelve ingeniosos puzzles con portales en las instalaciones de Aperture Science. Una aventura de humor negro con mecánicas revolucionarias y diálogos inolvidables.</string>
+
+    <!-- Game #3 -->
+    <string name="game3_position">#3</string>
+    <string name="game3_title">The Legend of Zelda: Breath of the Wild</string>
+    <string name="game3_year">2017</string>
+    <string name="game3_description">Explora un vasto reino de Hyrule en una aventura de mundo abierto sin precedentes. La libertad total define esta obra maestra que reinventó la saga de Zelda.</string>
+
+    <!-- Game #4 -->
+    <string name="game4_position">#4</string>
+    <string name="game4_title">DOOM Eternal</string>
+    <string name="game4_year">2020</string>
+    <string name="game4_description">Acción frenética y brutal contra hordas demoníacas en un shooter que exige reflejos perfectos. El combate más intenso y satisfactorio del género moderno.</string>
+
+    <!-- Game #5 -->
+    <string name="game5_position">#5</string>
+    <string name="game5_title">Baldur\'s Gate 3</string>
+    <string name="game5_year">2023</string>
+    <string name="game5_description">Un RPG épico basado en Dragones y Mazmorras con decisiones que importan de verdad. Narrativa profunda, combate táctico y libertad absoluta en tu aventura.</string>
+
+    <!-- Game #6 -->
+    <string name="game6_position">#6</string>
+    <string name="game6_title">Red Dead Redemption 2</string>
+    <string name="game6_year">2018</string>
+    <string name="game6_description">Vive la decadencia del Viejo Oeste como Arthur Morgan en la banda de Dutch van der Linde. Un mundo vivo y una historia conmovedora sobre lealtad y redención.</string>
+
+    <!-- Game #7 -->
+    <string name="game7_position">#7</string>
+    <string name="game7_title">Grand Theft Auto V</string>
+    <string name="game7_year">2013</string>
+    <string name="game7_description">Tres protagonistas, una ciudad enorme y libertad total para sembrar el caos en Los Santos. Crimen, acción y sátira social en el mundo abierto definitivo.</string>
+
+    <!-- Game #8 -->
+    <string name="game8_position">#8</string>
+    <string name="game8_title">The Witcher 3: Wild Hunt</string>
+    <string name="game8_year">2015</string>
+    <string name="game8_description">Encarna a Geralt de Rivia en su búsqueda de Ciri a través de un mundo de fantasía oscura. Decisiones morales complejas y una narrativa magistral te esperan.</string>
+
+    <!-- Game #9 -->
+    <string name="game9_position">#9</string>
+    <string name="game9_title">The Binding of Isaac: Afterbirth</string>
+    <string name="game9_year">2015</string>
+    <string name="game9_description">Un roguelike oscuro y adictivo donde cada partida es única. Escapa del sótano mientras enfrentas horrores inspirados en pesadillas y mitología bíblica.</string>
+
+    <!-- Game #10 -->
+    <string name="game10_position">#10</string>
+    <string name="game10_title">Cyberpunk 2077</string>
+    <string name="game10_year">2020</string>
+    <string name="game10_description">Sumérgete en Night City, una metrópolis futurista donde la tecnología y la humanidad chocan. Personifica a V en una historia de ambición, traición y supervivencia.</string>
+
+    <!-- Game #11 -->
+    <string name="game11_position">#11</string>
+    <string name="game11_title">Hades</string>
+    <string name="game11_year">2020</string>
+    <string name="game11_description">Escapa del inframundo griego en este roguelike de acción con combates dinámicos y fluidos. Cada muerte te acerca más a descubrir los secretos familiares de Zagreus.</string>
+
+    <!-- Game #12 -->
+    <string name="game12_position">#12</string>
+    <string name="game12_title">Superliminal</string>
+    <string name="game12_year">2019</string>
+    <string name="game12_description">Un puzzle en primera persona que juega con la perspectiva y la percepción de formas sorprendentes. Los objetos cambian de tamaño según cómo los mires.</string>
+
+    <!-- Game #13 -->
+    <string name="game13_position">#13</string>
+    <string name="game13_title">Dark Souls</string>
+    <string name="game13_year">2011</string>
+    <string name="game13_description">El juego que definió un género con su dificultad implacable y combate preciso. Explora Lordran, un mundo interconectado lleno de peligros y secretos oscuros.</string>
+
+    <!-- Game #14 -->
+    <string name="game14_position">#14</string>
+    <string name="game14_title">Elden Ring</string>
+    <string name="game14_year">2022</string>
+    <string name="game14_description">La fórmula souls llevada a un mundo abierto épico creado por FromSoftware y George R.R. Martin. Explora las Tierras Intermedias y conviértete en el Señor del Círculo.</string>
+
+    <!-- Game #15 -->
+    <string name="game15_position">#15</string>
+    <string name="game15_title">Metal Gear Solid 3: Snake Eater</string>
+    <string name="game15_year">2004</string>
+    <string name="game15_description">Infiltración en la jungla durante la Guerra Fría en la misión más emotiva de Snake. Espionaje táctico, supervivencia y una historia de traición que cambiará la saga para siempre.</string>
+
+    <!-- Game #16 -->
+    <string name="game16_position">#16</string>
+    <string name="game16_title">Fortnite</string>
+    <string name="game16_year">2017</string>
+    <string name="game16_description">El battle royale que conquistó el mundo con su estilo único y construcción en tiempo real. Compite contra 99 jugadores mientras la tormenta reduce el mapa progresivamente.</string>
+
+    <!-- Game #17 -->
+    <string name="game17_position">#17</string>
+    <string name="game17_title">Super Mario 64</string>
+    <string name="game17_year">1996</string>
+    <string name="game17_description">El salto revolucionario de Mario al 3D que cambió los videojuegos para siempre. Explora el castillo de Peach y sus mundos pintados en busca de las estrellas de poder.</string>
+
+    <!-- Game #18 -->
+    <string name="game18_position">#18</string>
+    <string name="game18_title">The Last of Us</string>
+    <string name="game18_year">2013</string>
+    <string name="game18_description">Joel y Ellie atraviesan una América post-apocalíptica devastada por una infección fúngica. Una historia de supervivencia, pérdida y el vínculo inquebrantable entre dos almas rotas.</string>
+
+    <!-- Game #19 -->
+    <string name="game19_position">#19</string>
+    <string name="game19_title">God of War</string>
+    <string name="game19_year">2018</string>
+    <string name="game19_description">Kratos y su hijo Atreus emprenden un viaje por los reinos nórdicos para esparcir cenizas. Acción brutal, mitología vikinga y una conmovedora historia de paternidad y redención.</string>
+
+    <!-- Game #20 -->
+    <string name="game20_position">#20</string>
+    <string name="game20_title">Scorn</string>
+    <string name="game20_year">2022</string>
+    <string name="game20_description">Un horror visceral inspirado en H.R. Giger y Zdzisław Beksiński con diseño biomecánico perturbador. Explora un mundo alienígena y hostil sin explicaciones ni tutoriales que te guíen.</string>
+
+    <!-- Game #21 -->
+    <string name="game21_position">#21</string>
+    <string name="game21_title">BioShock</string>
+    <string name="game21_year">2007</string>
+    <string name="game21_description">Descubre los secretos de Rapture, una ciudad submarina utópica convertida en pesadilla. Filosofía objectivista, decisiones morales y giros argumentales que te dejarán sin aliento.</string>
+
+    <!-- Game #22 -->
+    <string name="game22_position">#22</string>
+    <string name="game22_title">Hollow Knight</string>
+    <string name="game22_year">2017</string>
+    <string name="game22_description">Explora el reino olvidado de Hallownest como un pequeño caballero en este metroidvania desafiante. Arte dibujado a mano, combates precisos y una atmósfera melancólica inolvidable.</string>
+
+    <!-- Game #23 -->
+    <string name="game23_position">#23</string>
+    <string name="game23_title">Half-Life 2</string>
+    <string name="game23_year">2004</string>
+    <string name="game23_description">Gordon Freeman regresa para liderar la resistencia contra la ocupación Combine en City 17. Física revolucionaria, narrativa ambiental y el icónico Gravity Gun te esperan.</string>
+
+    <!-- Game #24 -->
+    <string name="game24_position">#24</string>
+    <string name="game24_title">World of Warcraft</string>
+    <string name="game24_year">2004</string>
+    <string name="game24_description">El MMORPG que definió un género y creó comunidades legendarias en Azeroth. Elige tu facción, explora continentes vastos y vive aventuras épicas con millones de jugadores.</string>
+
+    <!-- Game #25 -->
+    <string name="game25_position">#25</string>
+    <string name="game25_title">Plants vs. Zombies</string>
+    <string name="game25_year">2009</string>
+    <string name="game25_description">Defiende tu jardín de oleadas de zombis hambrientos usando plantas armadas con poderes únicos. Estrategia tower defense adictiva con humor absurdo y encanto inigualable.</string>
+
+    <!-- Game #26 -->
+    <string name="game26_position">#26</string>
+    <string name="game26_title">Pac-Man</string>
+    <string name="game26_year">1980</string>
+    <string name="game26_description">El icono arcade original que conquistó el mundo comiendo puntos y esquivando fantasmas. Simple, adictivo y eternamente reconocible, Pac-Man es historia del videojuego pura.</string>
+
+    <!-- Game #27 -->
+    <string name="game27_position">#27</string>
+    <string name="game27_title">Super Mario Bros. 3</string>
+    <string name="game27_year">1988</string>
+    <string name="game27_description">La cumbre del diseño de plataformas en 2D con power-ups creativos y niveles memorables. Mario vuela, nada y corre a través de ocho mundos llenos de imaginación y desafíos.</string>
+
+    <!-- Game #28 -->
+    <string name="game28_position">#28</string>
+    <string name="game28_title">Tetris</string>
+    <string name="game28_year">1984</string>
+    <string name="game28_description">El puzzle más jugado de todos los tiempos donde organizas bloques que caen del cielo. Adicción pura y simple que trasciende generaciones y plataformas con su fórmula perfecta.</string>
+
+    <!-- Game #29 -->
+    <string name="game29_position">#29</string>
+    <string name="game29_title">Call of Duty: Black Ops II</string>
+    <string name="game29_year">2012</string>
+    <string name="game29_description">Guerra futurista y flashbacks a la Guerra Fría en una campaña con decisiones ramificadas. Multijugador frenético que perfeccionó la fórmula CoD con mapas icónicos y zombies.</string>
+
+    <!-- Game #30 -->
+    <string name="game30_position">#30</string>
+    <string name="game30_title">Fallout 3</string>
+    <string name="game30_year">2008</string>
+    <string name="game30_description">Sal del Refugio 101 para explorar las ruinas post-nucleares de Washington D.C. en primera persona. Decisiones morales, exploración infinita y el característico humor negro de Fallout.</string>
+</resources>
