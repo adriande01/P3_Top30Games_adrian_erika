@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">P3_Top30Games_adrian_erika</string>
 
+    <!-- Title -->
+    <string name="title">Top 30 Games</string>
+
+
     <!-- Game #1 -->
     <string name="game1_position">#1</string>
     <string name="game1_title">Minecraft</string>

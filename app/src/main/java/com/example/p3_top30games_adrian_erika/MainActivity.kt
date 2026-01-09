@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.camera.core.Preview
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
@@ -13,12 +14,18 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FabPosition
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -29,7 +36,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.p3_top30games_adrian_erika.ui.theme.P3_Top30Games_adrian_erikaTheme
 
 class MainActivity : ComponentActivity() {
@@ -49,9 +55,12 @@ class MainActivity : ComponentActivity() {
 }
 
 // Main function
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Top30(modifier: Modifier = Modifier) {
     // * THEME BLACK LIGHT
+    // * Background fade out
+
     // Initialize an array of Top 30 games
     val games = listOf(
         Game(R.string.game1_title, R.drawable.g1, R.string.game1_year, R.string.game1_description),
@@ -86,15 +95,26 @@ fun Top30(modifier: Modifier = Modifier) {
         Game(R.string.game30_title, R.drawable.g30, R.string.game30_year, R.string.game30_description)
     )
 
-    // 1. Colum structure for display the gameCards
-    // LAZY COLUMN *
-    Column {
-        // 2. Put the tile TOP 30 GAMES Top bar
-
-        // 3. Iterate over the list of gameCards and call GameCard fun
-        // games.indices is the range of values of index == 0 until games.size
-        for (i in games.indices) {
-            GameCard(game = games[i], position = i + 1)
+    // 1. Add top bar
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Row {
+                        Image(
+                            painter = painterResource(R.drawable.ic_launcher_background),
+                            contentDescription = "logo"
+                        )
+                        Text(text = stringResource(R.string.title))
+                    }
+                }
+            )
+        }
+    ){ paddingValues ->
+        LazyColumn(contentPadding = paddingValues) {
+            itemsIndexed(games) { index, game ->
+                GameCard(game = game, position = index + 1)
+            }
         }
     }
 
@@ -110,7 +130,7 @@ fun GameCard(game: Game, position: Int) {
 
     // Card (container of each game)
     Card {
-        // Column structure
+        // Column structure ssss
         Column(
             modifier = Modifier
                 .animateContentSize(
@@ -171,7 +191,7 @@ fun GameCard(game: Game, position: Int) {
     }
 }
 
-@Preview(showBackground = true)
+@androidx.compose.ui.tooling.preview.Preview(showBackground = true)
 @Composable
 fun Top30Preview() {
     P3_Top30Games_adrian_erikaTheme {
