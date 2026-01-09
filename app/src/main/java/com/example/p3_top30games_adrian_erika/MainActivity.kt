@@ -2,17 +2,19 @@
 
 package com.example.p3_top30games_adrian_erika
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.camera.core.Preview
+
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,6 +31,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -36,11 +39,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import com.example.p3_top30games_adrian_erika.ui.theme.P3_Top30Games_adrian_erikaTheme
+
+
+// GLOBAL VARIABLE Minecraft font
+val minecraftFont = FontFamily(Font(R.font.minecraft_font))
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,17 +61,17 @@ class MainActivity : ComponentActivity() {
                 val gradient = if (isSystemInDarkTheme()) {
                     Brush.verticalGradient(
                         colors = listOf(
-                            Color(0xFF1a1a2e),  // Azul oscuro
-                            Color(0xFF16213e),  // Azul medio
-                            Color(0xFF0f3460)   // Azul profundo
+                            Color(0xFF1a1a2e),
+                            Color(0xFF16213e),
+                            Color(0xFF0f3460)
                         )
                     )
                 } else {
                     Brush.verticalGradient(
                         colors = listOf(
-                            Color(0xFF667eea),  // Morado claro
-                            Color(0xFF764ba2),  // Morado medio
-                            Color(0xFFf093fb)   // Rosa
+                            Color(0xFFE8F0FF),
+                            Color(0xFF403F4C),
+                            Color(0xFF8E9AAF)
                         )
                     )
                 }
@@ -91,41 +100,15 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Top30(modifier: Modifier = Modifier) {
-    // * Background fade out
 
     // Initialize an array of Top 30 games
     val games = listOf(
-        Game(R.string.game1_title, R.drawable.g1, R.string.game1_year, R.string.game1_description),
-        Game(R.string.game2_title, R.drawable.g2, R.string.game2_year, R.string.game2_description),
-        Game(R.string.game3_title, R.drawable.g3, R.string.game3_year, R.string.game3_description),
-        Game(R.string.game4_title, R.drawable.g4, R.string.game4_year, R.string.game4_description),
-        Game(R.string.game5_title, R.drawable.g5, R.string.game5_year, R.string.game5_description),
-        Game(R.string.game6_title, R.drawable.g6, R.string.game6_year, R.string.game6_description),
-        Game(R.string.game7_title, R.drawable.g7, R.string.game7_year, R.string.game7_description),
-        Game(R.string.game8_title, R.drawable.g8, R.string.game8_year, R.string.game8_description),
-        Game(R.string.game9_title, R.drawable.g9, R.string.game9_year, R.string.game9_description),
-        Game(R.string.game10_title, R.drawable.g10, R.string.game10_year, R.string.game10_description),
-        Game(R.string.game11_title, R.drawable.g11, R.string.game11_year, R.string.game11_description),
-        Game(R.string.game12_title, R.drawable.g12, R.string.game12_year, R.string.game12_description),
-        Game(R.string.game13_title, R.drawable.g13, R.string.game13_year, R.string.game13_description),
-        Game(R.string.game14_title, R.drawable.g14, R.string.game14_year, R.string.game14_description),
-        Game(R.string.game15_title, R.drawable.g15, R.string.game15_year, R.string.game15_description),
-        Game(R.string.game16_title, R.drawable.g16, R.string.game16_year, R.string.game16_description),
-        Game(R.string.game17_title, R.drawable.g17, R.string.game17_year, R.string.game17_description),
-        Game(R.string.game18_title, R.drawable.g18, R.string.game18_year, R.string.game18_description),
-        Game(R.string.game19_title, R.drawable.g19, R.string.game19_year, R.string.game19_description),
-        Game(R.string.game20_title, R.drawable.g20, R.string.game20_year, R.string.game20_description),
-        Game(R.string.game21_title, R.drawable.g21, R.string.game21_year, R.string.game21_description),
-        Game(R.string.game22_title, R.drawable.g22, R.string.game22_year, R.string.game22_description),
-        Game(R.string.game23_title, R.drawable.g23, R.string.game23_year, R.string.game23_description),
-        Game(R.string.game24_title, R.drawable.g24, R.string.game24_year, R.string.game24_description),
-        Game(R.string.game25_title, R.drawable.g25, R.string.game25_year, R.string.game25_description),
-        Game(R.string.game26_title, R.drawable.g26, R.string.game26_year, R.string.game26_description),
-        Game(R.string.game27_title, R.drawable.g27, R.string.game27_year, R.string.game27_description),
-        Game(R.string.game28_title, R.drawable.g28, R.string.game28_year, R.string.game28_description),
-        Game(R.string.game29_title, R.drawable.g29, R.string.game29_year, R.string.game29_description),
-        Game(R.string.game30_title, R.drawable.g30, R.string.game30_year, R.string.game30_description)
-    )
+        Game(R.string.game1_title, R.drawable.g1, R.string.game1_year, R.string.game1_description, R.raw.s1),
+        Game(R.string.game2_title, R.drawable.g2, R.string.game2_year, R.string.game2_description, R.raw.s2),
+        Game(R.string.game3_title, R.drawable.g3, R.string.game3_year, R.string.game3_description, R.raw.s3),
+        Game(R.string.game4_title, R.drawable.g4, R.string.game4_year, R.string.game4_description, R.raw.s4),
+        Game(R.string.game5_title, R.drawable.g5, R.string.game5_year, R.string.game5_description, R.raw.s5),
+        Game(R.string.game6_title, R.drawable.g6, R.string.game6_year, R.string.game6_description, R.raw.s6))
 
     // 1. Add top bar
     Scaffold(
@@ -135,11 +118,12 @@ fun Top30(modifier: Modifier = Modifier) {
                 title = {
                     Row {
                         Image(
-                            painter = painterResource(R.drawable.ic_launcher_background),
+                            painter = painterResource(R.drawable.logo),
                             contentDescription = "logo",
 
                         )
-                        Text(text = stringResource(R.string.title))
+                        Text(text = stringResource(R.string.title),
+                            fontFamily = minecraftFont)
                     }
                 }
             )
@@ -157,10 +141,25 @@ fun Top30(modifier: Modifier = Modifier) {
 // Function to create a GameCard
 @Composable
 fun GameCard(game: Game, position: Int) {
-    // Minecraft font
-    val minecraftFont = FontFamily(Font(R.font.minecraft_font))
+
+
     // Mutable expanded flag to expand information about game
     var expanded by remember { mutableStateOf(false) }
+
+    // Get context to have access of resources
+    val context = androidx.compose.ui.platform.LocalContext.current
+
+    // Create one instance of mediaplayer that lives while composble exists
+    val mediaPlayer = remember {
+        MediaPlayer.create(context, game.musicRes)
+    }
+
+    // Release resources, executes when Composable disappear of screen, if not consumes RAM
+    DisposableEffect(Unit) {
+        onDispose {
+            mediaPlayer.release()
+        }
+    }
 
     // Card (container of each game)
     Card {
@@ -192,16 +191,27 @@ fun GameCard(game: Game, position: Int) {
                 Image(
                     painter = painterResource(game.imageRes),
                     contentDescription = stringResource(game.titleRes),
-                    // When image gets clicked ==> reverse the value of val expanded
-                    modifier = Modifier.clickable{
-                        expanded = !expanded
+                    // When image gets pressed ==> reverse the value of val expanded
+                    modifier = Modifier.pointerInput(Unit) {
+                        detectTapGestures(
+                            onPress = {
+                                // Play music
+                                expanded = true
+                                mediaPlayer.start()
+                                // Wait until you stop pressing
+                                tryAwaitRelease()
+                                // Pause music
+                                expanded = false
+                                mediaPlayer.pause()
+                                mediaPlayer.seekTo(0)
+                            }
+                        )
                     }
 
                 )
             }
             // ----------------------------------------------------------------------
-            // All this 4. and 5. has to be hiden and get expanded bu clicking image
-
+            // All this 4. and 5. has to be hidden and get expanded bu clicking image
 
             if(expanded){
                 Column(){

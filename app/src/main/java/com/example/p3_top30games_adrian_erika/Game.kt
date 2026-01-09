@@ -7,7 +7,8 @@ data class Game(
     val titleRes: Int,
     val imageRes: Int,
     val yearRes: Int,
-    val descriptionRes: Int
+    val descriptionRes: Int,
+    val musicRes: Int
 )
 
 
