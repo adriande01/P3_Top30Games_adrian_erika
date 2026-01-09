@@ -11,7 +11,9 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -32,6 +34,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
@@ -43,13 +47,42 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+
             P3_Top30Games_adrian_erikaTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Top30(
-                        modifier = Modifier.padding(innerPadding)
+                val gradient = if (isSystemInDarkTheme()) {
+                    Brush.verticalGradient(
+                        colors = listOf(
+                            Color(0xFF1a1a2e),  // Azul oscuro
+                            Color(0xFF16213e),  // Azul medio
+                            Color(0xFF0f3460)   // Azul profundo
+                        )
+                    )
+                } else {
+                    Brush.verticalGradient(
+                        colors = listOf(
+                            Color(0xFF667eea),  // Morado claro
+                            Color(0xFF764ba2),  // Morado medio
+                            Color(0xFFf093fb)   // Rosa
+                        )
                     )
                 }
+
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(gradient)
+                ) {
+                    Scaffold(
+                        modifier = Modifier.fillMaxSize(),
+                        containerColor = Color.Transparent // Fondo transparente
+                    ) { innerPadding ->
+                        Top30(
+                            modifier = Modifier.padding(innerPadding)
+                        )
+                    }
+                }
             }
+
         }
     }
 }
@@ -58,7 +91,6 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Top30(modifier: Modifier = Modifier) {
-    // * THEME BLACK LIGHT
     // * Background fade out
 
     // Initialize an array of Top 30 games
@@ -99,11 +131,13 @@ fun Top30(modifier: Modifier = Modifier) {
     Scaffold(
         topBar = {
             TopAppBar(
+                
                 title = {
                     Row {
                         Image(
                             painter = painterResource(R.drawable.ic_launcher_background),
-                            contentDescription = "logo"
+                            contentDescription = "logo",
+
                         )
                         Text(text = stringResource(R.string.title))
                     }
