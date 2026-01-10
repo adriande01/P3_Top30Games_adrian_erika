@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">P3_Top30Games_adrian_erika</string>
 
+    <!-- Logo -->
+    <string name="logo">Logo</string>
+
     <!-- Title -->
     <string name="title">Top 30 Games</string>
 
